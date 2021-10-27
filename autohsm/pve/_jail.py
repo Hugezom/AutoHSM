@@ -28,7 +28,6 @@ def get_bonus():
     tap(*pos["skill_0"])
     wait()
     tap(*pos["bonus_confirm"])
-    wait(1.5)
 
 
 def get_buff(img, tpl, threshold=0.9, _x=0, _y=0):

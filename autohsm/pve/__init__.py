@@ -24,6 +24,7 @@ def jail(n=2):
         tap(*pos["choose"])
         time.sleep(7)
         get_bonus()
+        time.sleep(1.7)
 
         for _ in range(n - 1):
             if next_node():
@@ -46,6 +47,7 @@ def jail(n=2):
                 tap(*pos["choose"])
                 time.sleep(7)
                 get_bonus()
+                time.sleep(1.7)
 
         while not next_node():
             time.sleep(3)
