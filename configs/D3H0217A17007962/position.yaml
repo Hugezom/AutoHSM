@@ -1,5 +1,8 @@
 team:
-  - 600
+  #1 - 500
+  #2 - 1200
+  #3 - 1900
+  - 1900
   - 350
 choose:
   - 2200
@@ -10,3 +13,30 @@ setting:
 surrender:
   - 1280
   - 300
+next_turn:
+  - 2300
+  - 700
+skill_0:
+  - 930
+  - 700
+skill_1:
+  - 1250
+  - 700
+skill_2:
+  - 1600
+  - 700
+bonus_confirm:
+  - 1600
+  - 1300
+check_team:
+  - 1000
+  - 1400
+give_up:
+  - 1500
+  - 1100
+global_confirm:
+  - 1000
+  - 870
+mystery_confirm:
+  - 1230
+  - 1200
