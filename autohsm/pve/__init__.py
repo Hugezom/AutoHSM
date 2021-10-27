@@ -4,9 +4,9 @@ from ._jail import *
 def jail(n=2):
     while True:
         tap(*pos["choose"])
-        time.sleep(0.9)
+        time.sleep(0.95)
         tap(*pos["team"])
-        time.sleep(0.8)
+        time.sleep(0.85)
         tap(*pos["choose"])
         time.sleep(0.3)
         tap(*pos["global_confirm"])
