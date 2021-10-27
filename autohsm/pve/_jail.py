@@ -82,7 +82,7 @@ def next_node():
     if (
         get_buff(img, tpl_mystery, _x=x_range[0], _y=y_range[0])
         or get_buff(img, tpl_angle, _x=x_range[0], _y=y_range[0])
-        # or get_buff(img, tpl_up, _x=x_range[0], _y=y_range[0]) 容易误识别
+        or get_buff(img, tpl_up, _x=x_range[0], _y=y_range[0], threshold=0.95) #容易误识别
     ):
         return False
 
