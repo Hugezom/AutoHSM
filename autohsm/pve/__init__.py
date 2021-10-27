@@ -1,7 +1,7 @@
 from ._jail import *
 
 
-def jail(n=2):
+def jail(n=5):
     while True:
         tap(*pos["choose"])
         time.sleep(0.95)
@@ -18,11 +18,11 @@ def jail(n=2):
         tap(*pos["next_turn"])
         time.sleep(11.5)
         battle()
-        time.sleep(21)
+        time.sleep(22)
         tap(*pos["choose"])
         wait()
         tap(*pos["choose"])
-        time.sleep(7)
+        time.sleep(8)
         get_bonus()
         time.sleep(1.7)
 
@@ -41,11 +41,11 @@ def jail(n=2):
                 tap(x, y, x, y - 350, duration=200)
                 wait()
                 tap(*pos["next_turn"])
-                time.sleep(21)
+                time.sleep(22)
                 tap(*pos["choose"])
                 wait()
                 tap(*pos["choose"])
-                time.sleep(7)
+                time.sleep(8)
                 get_bonus()
                 time.sleep(1.7)
 
