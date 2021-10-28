@@ -1,4 +1,5 @@
 from .base import *
+from ..pvp.base import surrender
 
 
 def one_turn_fire(n=3):
@@ -32,8 +33,8 @@ def one_turn_fire(n=3):
 
         for _ in range(n - 1):
             print(f"当前重复次数与位置: {i}-{_+1}")
-            if next_node():
-                print("Fight!")
+            nd = next_node()
+            if nd is True:
                 wait()
                 tap(*pos["choose"])
                 time.sleep(20)
@@ -44,7 +45,7 @@ def one_turn_fire(n=3):
                 tap(*pos["skill_1"])
                 wait()
                 x, y = pos["skill_0"]
-                tap(x, y, x, y - pos["skill_distance"], duration=200)
+                tap(x, y, x, y - 350, duration=200)
                 wait()
                 tap(*pos["next_turn"])
                 time.sleep(22)
@@ -55,9 +56,17 @@ def one_turn_fire(n=3):
                 get_bonus()
                 time.sleep(1.7)
 
+            elif isinstance(nd, TypeError):
+                print("尝试自救!")
+                surrender()
+                time.sleep(1)
+                tap(*pos["global_confirm"])
+                wait()
+                tap(*pos["global_confirm"])
+                break
+
         while not next_node():
             time.sleep(1)
 
         quit()
         time.sleep(5)
-

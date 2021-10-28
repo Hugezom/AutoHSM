@@ -1,5 +1,5 @@
 from ..utils import *
-
+import yaml
 
 device = detect_device()
 if not os.path.exists(f"configs/{device}/"):
@@ -37,7 +37,7 @@ def is_matching(img, threshold=0.9):
     return cv2.matchTemplate(img, tpl_matching, cv2.TM_CCOEFF_NORMED).max() >= threshold
 
 
-def surrender(t, threshold=0.9):
+def surrender(t=0, threshold=0.9):
     tap(*pos["setting"])
     time.sleep(0.2)
     # screen = catch_screen()

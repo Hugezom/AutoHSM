@@ -1,14 +1,14 @@
 import time
-from ._surrender import *
+from .base import *
 
-def surrender(wait_seconds=0, check_interval=0.3):
-    init()
+
+def auto_surrender(wait_seconds=0, check_interval=0.3):
     print("Start to surrender!")
 
     should_run = True
     while should_run:
-        #screen = catch_screen()
-        #if check_start(screen):
+        # screen = catch_screen()
+        # if check_start(screen):
         #    time.sleep(check_interval)
         #    screen = catch_screen()
         start()
@@ -19,6 +19,7 @@ def surrender(wait_seconds=0, check_interval=0.3):
 
         time.sleep(1)
         surrender(wait_seconds)
-        
+
         time.sleep(2)
-        #check_rewards(screen)
+        # check_rewards(screen)
+

@@ -45,12 +45,3 @@ def catch_screen():
     image = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), cv2.IMREAD_COLOR)
     return image
 
-
-def start():
-    tap(*pos["choose"])
-
-    wait(0.3)
-    tap(*pos["team"])
-
-    wait()
-    tap(*pos["choose"])
