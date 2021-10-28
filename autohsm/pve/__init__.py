@@ -1,17 +1,17 @@
-from ._jail import *
+from .base import *
 
 
-def jail(n=5):
+def fire(n=5):
     while True:
         tap(*pos["choose"])
-        time.sleep(0.95)
+        time.sleep(1)
         tap(*pos["team"])
-        time.sleep(0.85)
+        time.sleep(0.9)
         tap(*pos["choose"])
-        time.sleep(0.3)
+        time.sleep(0.4)
         tap(*pos["global_confirm"])
 
-        time.sleep(5.2)
+        time.sleep(6)
         tap(*pos["choose"])
 
         time.sleep(18.5)

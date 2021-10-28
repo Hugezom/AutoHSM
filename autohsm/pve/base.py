@@ -42,8 +42,8 @@ def get_buff(img, tpl, threshold=0.9, _x=0, _y=0):
         tap(a, b)
         wait()
         tap(*pos["choose"])
-        time.sleep(0.5)
-        tap(*pos["global_confirm"])
+        time.sleep(0.8)
+        tap(*pos["choose"])
         return True
     else:
         return False
@@ -63,7 +63,7 @@ def get_mystery(img, threshold=0.9, _x=0, _y=0):
         tap(*pos["choose"])
         wait()
         tap(*pos["skill_1"])
-        wait()
+        time.sleep(0.5)
         tap(*pos["mystery_confirm"])
         wait()
         tap(*pos["choose"])
@@ -82,7 +82,9 @@ def next_node():
     if (
         get_buff(img, tpl_mystery, _x=x_range[0], _y=y_range[0])
         or get_buff(img, tpl_angle, _x=x_range[0], _y=y_range[0])
-        or get_buff(img, tpl_up, _x=x_range[0], _y=y_range[0], threshold=0.95) #容易误识别
+        or get_buff(
+            img, tpl_up, _x=x_range[0], _y=y_range[0], threshold=0.95
+        )  # 好像容易误识别
     ):
         return False
 
@@ -99,6 +101,10 @@ def next_node():
             minRadius=int(a / 18),
             maxRadius=int(a / 12),
         )
+
+        if circles is None:
+            raise TypeError("没有检测到圆. 查看是否处于地图界面!")
+
         circles = np.int0(np.around(circles))
 
         for i in circles[0]:
