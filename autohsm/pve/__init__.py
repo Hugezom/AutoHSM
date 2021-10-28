@@ -1,5 +1,4 @@
 from .base import *
-from ..pvp.base import surrender
 
 
 def one_turn_fire(n=3):

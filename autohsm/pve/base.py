@@ -135,3 +135,23 @@ def quit():
     tap(*pos["global_confirm"])
     wait()
     tap(*pos["global_confirm"])
+
+
+def surrender(t=0, threshold=0.9):
+    tap(*pos["setting"])
+    time.sleep(0.2)
+    # screen = catch_screen()
+    # result = cv2.matchTemplate(screen, tpl_surrender, cv2.TM_CCOEFF_NORMED)
+    # if result.max() >= threshold:
+    #    time.sleep(t)
+    #    tap(*pos["surrender"])
+    # else:
+    #    tap(*pos["choose"])
+    time.sleep(t)
+    tap(*pos["surrender"])
+    time.sleep(0.2)
+    tap(*pos["setting"])
+    time.sleep(0.2)
+    tap(*pos["choose"])
+    time.sleep(0.2)
+    tap(*pos["choose"])
