@@ -31,8 +31,9 @@ def one_turn_fire(n=3):
         get_bonus()
         time.sleep(1.7)
 
+        has_error = False
         for _ in range(n - 1):
-            print(f"当前重复次数与位置: {i}-{_+1}")
+            print(f"当前重复次数与位置: {i}-{_+2}")
             nd = next_node()
             if nd is True:
                 wait()
@@ -57,15 +58,16 @@ def one_turn_fire(n=3):
                 time.sleep(1.7)
 
             elif isinstance(nd, TypeError):
+                has_error = True
                 print("尝试自救!")
                 surrender()
-                time.sleep(1)
+                time.sleep(2)
                 tap(*pos["global_confirm"])
                 wait()
                 tap(*pos["global_confirm"])
                 break
 
-        while not next_node():
+        while not has_error and not next_node():
             time.sleep(1)
 
         quit()

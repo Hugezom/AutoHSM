@@ -131,5 +131,7 @@ def quit():
     tap(*pos["give_up"])
     wait()
     tap(*pos["global_confirm"])
-    wait(2)
+    wait(1.5)
+    tap(*pos["global_confirm"])
+    wait()
     tap(*pos["global_confirm"])
