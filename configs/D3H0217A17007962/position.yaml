@@ -26,7 +26,10 @@ skill_1:
 skill_2:
   - 1600
   - 700
-
+skill_distance: 
+# 技能拖动的距离
+  350
+  
 # PVP
 setting:
 ##右上角设置栏

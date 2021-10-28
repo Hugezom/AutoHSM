@@ -1,7 +1,6 @@
 import os
 import cv2
 import time
-import yaml
 import random
 import numpy as np
 import subprocess
@@ -10,9 +9,10 @@ import subprocess
 def detect_device():
     devices = os.popen("adb devices").read().split("\n")[1]
     if devices == "":
-        raise IOError("No device detected!")
+        raise IOError("There is no device detected!")
     else:
         device = devices.split("\t")[0]
+        print(f"Device {device} detected!")
         return device
 
 

@@ -1,5 +1,5 @@
 from ..utils import *
-
+import yaml
 
 device = detect_device()
 if not os.path.exists(f"configs/{device}/"):
@@ -26,7 +26,7 @@ def battle():
 
 def get_bonus():
     tap(*pos["skill_0"])
-    wait()
+    wait(0.4)
     tap(*pos["bonus_confirm"])
 
 
@@ -42,7 +42,7 @@ def get_buff(img, tpl, threshold=0.9, _x=0, _y=0):
         tap(a, b)
         wait()
         tap(*pos["choose"])
-        time.sleep(0.8)
+        time.sleep(1.2)
         tap(*pos["choose"])
         return True
     else:
@@ -61,12 +61,12 @@ def get_mystery(img, threshold=0.9, _x=0, _y=0):
         tap(a, b)
         wait()
         tap(*pos["choose"])
-        wait()
+        time.sleep(1.2)
         tap(*pos["skill_1"])
-        time.sleep(0.5)
+        wait()
         tap(*pos["mystery_confirm"])
         wait()
-        tap(*pos["choose"])
+        tap(*pos["mystery_confirm"])
         return True
     else:
         return False
@@ -103,7 +103,9 @@ def next_node():
         )
 
         if circles is None:
-            raise TypeError("没有检测到圆. 查看是否处于地图界面!")
+            e = TypeError("没有检测到圆. 查看是否处于地图界面!")
+            print(e)
+            return e
 
         circles = np.int0(np.around(circles))
 
@@ -119,7 +121,7 @@ def battle():
     wait()
     x, y = pos["skill_0"]
     tap(x, y, x, y - 350, duration=200)
-    wait()
+    time.sleep(0.5)
     tap(*pos["next_turn"])
 
 
@@ -129,5 +131,5 @@ def quit():
     tap(*pos["give_up"])
     wait()
     tap(*pos["global_confirm"])
-    wait(1.5)
-    tap(*pos["choose"])
+    wait(2)
+    tap(*pos["global_confirm"])
