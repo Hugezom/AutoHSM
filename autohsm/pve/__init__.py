@@ -23,9 +23,9 @@ def one_turn_fire(n=3):
         time.sleep(11.5)
         battle()
         time.sleep(22)
-        tap(*pos["choose"])
+        tap(*pos["global_confirm"])
         wait()
-        tap(*pos["choose"])
+        tap(*pos["global_confirm"])
         time.sleep(10)
         get_bonus()
         time.sleep(1.7)
@@ -70,4 +70,4 @@ def one_turn_fire(n=3):
             time.sleep(1)
 
         quit()
-        time.sleep(5)
+        time.sleep(6)

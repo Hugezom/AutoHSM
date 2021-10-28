@@ -43,7 +43,9 @@ def get_buff(img, tpl, threshold=0.9, _x=0, _y=0):
         wait()
         tap(*pos["choose"])
         time.sleep(1.2)
-        tap(*pos["choose"])
+        tap(*pos["global_confirm"])
+        wait()
+        tap(*pos["global_confirm"])
         return True
     else:
         return False
@@ -80,8 +82,8 @@ def next_node():
     img = img[x_range[0] : x_range[1], y_range[0] : y_range[1]]
 
     if (
-        get_buff(img, tpl_mystery, _x=x_range[0], _y=y_range[0])
-        or get_buff(img, tpl_angle, _x=x_range[0], _y=y_range[0])
+        get_buff(img, tpl_mystery, _x=x_range[0], _y=y_range[0], threshold=0.95)
+        or get_buff(img, tpl_angle, _x=x_range[0], _y=y_range[0], threshold=0.95)
         or get_buff(
             img, tpl_up, _x=x_range[0], _y=y_range[0], threshold=0.95
         )  # 好像容易误识别
