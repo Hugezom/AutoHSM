@@ -7,18 +7,18 @@ def one_turn_fire(n=3):
     while True:
         i += 1
         tap(*pos["choose"])
-        time.sleep(1)
+        time.sleep(1.2)
         tap(*pos["team"])
-        time.sleep(1.5)
+        time.sleep(1.8)
         tap(*pos["choose"])
-        time.sleep(0.5)
+        time.sleep(0.6)
         tap(*pos["global_confirm"])
 
-        time.sleep(5.5)
+        time.sleep(6)
         tap(*pos["choose"])
         print(f"当前重复次数与位置: {i}-1")
 
-        time.sleep(18.5)
+        time.sleep(20)
         tap(*pos["next_turn"])
         time.sleep(11.5)
         battle()
@@ -28,14 +28,14 @@ def one_turn_fire(n=3):
         tap(*pos["global_confirm"])
         time.sleep(10)
         get_bonus()
-        time.sleep(1.7)
+        time.sleep(2)
 
         has_error = False
         for _ in range(n - 1):
             print(f"当前重复次数与位置: {i}-{_+2}")
             nd = next_node()
             if nd is True:
-                wait()
+                time.sleep(0.3)
                 tap(*pos["choose"])
                 time.sleep(20)
                 tap(*pos["next_turn"])
@@ -52,9 +52,9 @@ def one_turn_fire(n=3):
                 tap(*pos["choose"])
                 wait()
                 tap(*pos["choose"])
-                time.sleep(10)
+                time.sleep(12.5)
                 get_bonus()
-                time.sleep(1.7)
+                time.sleep(2)
 
             elif isinstance(nd, TypeError):
                 has_error = True
@@ -64,10 +64,11 @@ def one_turn_fire(n=3):
                 tap(*pos["global_confirm"])
                 wait()
                 tap(*pos["global_confirm"])
+                time.sleep(5)
                 break
 
         while not has_error and not next_node():
             time.sleep(1)
 
         quit()
-        time.sleep(6)
+        time.sleep(4)

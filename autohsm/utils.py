@@ -19,7 +19,7 @@ def detect_device():
 def tap(x, y, tx=None, ty=None, error=15, duration: int = 0):
     x += random.uniform(-error, error)
     y += random.uniform(-error, error)
-    duration += int(random.uniform(50, 80))
+    duration += int(random.uniform(10, 50))
     if tx is None:
         tx = x
     tx += random.uniform(-error, error)
